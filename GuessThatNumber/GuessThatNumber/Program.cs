@@ -38,23 +38,39 @@ namespace GuessThatNumber
 
             int randomNum = rng.Next(1, 101);
             Console.WriteLine(randomNum);
-            while (userNum != randomNum)
+            bool playing = true;
+            while (playing)
             {
 
 
                 if (userNum == randomNum)
                 {
                     Console.WriteLine("Your number " + userNum + " matches");
+                    Console.WriteLine("You win press the any key to quit");
+                    
+
+                    playing = false;
+                    
                 }
                 else if (userNum > randomNum)
                 {
                     Console.WriteLine("Your number " + userNum + " is to great");
+                    Console.WriteLine("You lose press any key to quit");
+                    
+                    playing = false;
+
                 }
                 else if (userNum < randomNum)
                 {
                     Console.WriteLine("Your number " + userNum + "is lower than " + randomNum);
+                    Console.WriteLine("You lose press any key to quit");
+                    
+                    playing = false;
+                    
+                    
                 }
 
+                
 
             }
 
